@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Workspace</title>
+    <title>KYXS Portfolio</title>
     <style>
         /* Core Minimalist Layout Styles */
         :root {
@@ -93,7 +93,7 @@
             opacity: 0.9;
         }
 
-        /* Profile Split Container */
+        /* Main Center Workspace Layout */
         .portfolio-main-hero {
             display: flex;
             align-items: center;
@@ -200,21 +200,6 @@
             color: var(--text-white);
         }
 
-        /* Avatar Container Config */
-        .profile-avatar-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .large-profile-avatar {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #1c1c1f;
-        }
-
         /* Tiny Est Timestamp Label */
         .est-timestamp {
             position: fixed;
@@ -226,12 +211,11 @@
             text-transform: uppercase;
         }
 
-        /* Responsive Mobile Layout Breakpoint Override */
+        /* Responsive Mobile Breakpoint Override */
         @media (max-width: 768px) {
             .portfolio-main-hero {
-                flex-direction: column-reverse;
-                text-align: center;
                 padding-top: 120px;
+                text-align: center;
             }
             .tech-stack-row, .profile-directory-footer {
                 justify-content: center;
@@ -265,20 +249,13 @@
         </div>
     </nav>
 
-    <!-- MAIN PROFILE HERO BLOCK -->
     <header class="portfolio-main-hero">
-        
-        <!-- LEFT SIDE CONTENT PANEL -->
         <div class="profile-text-side">
-            <!-- KYXS METALLIC GRADIENT TITLE -->
             <h1 class="portfolio-main-title">KYXS</h1>
-            
-            <!-- SUBTITLE CHANGED FROM DEVELOPER & RESELLER TO DEVELOPER -->
             <p class="profile-subtitle">DEVELOPER</p>
             
             <div class="profile-divider"></div>
             
-            <!-- LANGUAGES STACK ROW -->
             <div class="tech-stack-row">
                 <span>Luau</span>
                 <span>TypeScript</span>
@@ -286,13 +263,12 @@
                 <span>C++</span>
             </div>
             
-            <!-- SERVICES CHECKLIST DESCRIPTORS -->
             <div class="services-list">
+                <!-- PRESERVED THE TOP ROW CONTENT AND THE DASH ONLY -->
                 <div class="service-item">software development</div>
-                <div class="service-item">reselling & cheating</div>
+                <div class="service-item"></div>
             </div>
             
-            <!-- LOWER LINK WRAPPERS -->
             <div class="profile-directory-footer">
                 <a href="#contact" class="directory-link">
                     <svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -303,3 +279,25 @@
                     GITHUB
                 </a>
                 <a href="https://discord.com" target="_blank" class="directory-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    DISCORD
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="est-timestamp">Est. 2026</div>
+
+    <script>
+        /* Interactive Scrolling FX */
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 20) {
+                navbar.style.borderBottom = '1px solid #1c1c1f';
+            } else {
+                navbar.style.borderBottom = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
