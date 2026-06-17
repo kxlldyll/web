@@ -168,3 +168,10 @@ body {
     font-size: 0.8rem;
     color: #4f545c;
 }
+
+/* Structural Overrides for Brand Icon Vectors */
+.profile-directory-footer a[href*="github.com"] svg,
+.profile-directory-footer a[href*="discord.com"] svg {
+    fill: currentColor !important;
+    stroke: none !important;
+}
