@@ -115,12 +115,15 @@
         .hero-title {
             font-size: 4.8rem;
             font-weight: 800;
-            line-height: 1.05;
+            line-height: 1.1;
             letter-spacing: -2px;
             margin-bottom: 24px;
-            background: linear-gradient(to bottom, #ffffff 60%, #888888 100%);
+            
+            /* FIXED METALLIC GRADIENT CONFIGURATION */
+            background: linear-gradient(to right, #ffffff 40%, #777777 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .hero-subtitle {
@@ -185,7 +188,7 @@
     <nav class="navbar">
         <div class="nav-left">
             <div class="logo">
-                <!-- REMEMBER: Make sure your red face image is named avatar.png in GitHub -->
+                <!-- Make sure your red sketch file is uploaded as avatar.png -->
                 <img src="avatar.png" alt="Avatar" class="nav-avatar">
                 Sincord
             </div>
@@ -204,7 +207,8 @@
     </nav>
 
     <header class="hero-section">
-        <h1 class="hero-title">Hello, welcome<br>to my website.</h1>
+        <!-- TITLE WITH SMOOTH METALLIC SHINE -->
+        <h1 class="hero-title">Welcome to my website.</h1>
         <p class="hero-subtitle">A fork that offers a wider selection of plugins from the community.</p>
         <p class="hero-tagline">The feature-rich fork of Vencord.</p>
         
