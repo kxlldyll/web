@@ -117,69 +117,18 @@
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -2px;
-            margin-bottom: 24px;
+            margin: 0;
             
-            /* FIXED METALLIC GRADIENT CONFIGURATION */
             background: linear-gradient(to right, #ffffff 40%, #777777 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            max-width: 500px;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .hero-tagline {
-            font-size: 0.95rem;
-            color: #4f545c;
-            margin-bottom: 40px;
-        }
-
-        /* Action Buttons Row */
-        .cta-group {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 24px;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-white {
-            background-color: var(--text-white);
-            color: var(--bg-black);
-        }
-
-        .btn-white:hover {
-            background-color: #e3e5e8;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-white);
-            border: 1px solid #36393f;
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: #72767d;
-        }
-
         .os-availability {
             font-size: 0.8rem;
             color: #4f545c;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -188,7 +137,6 @@
     <nav class="navbar">
         <div class="nav-left">
             <div class="logo">
-                <!-- Make sure your red sketch file is uploaded as avatar.png -->
                 <img src="avatar.png" alt="Avatar" class="nav-avatar">
                 Sincord
             </div>
@@ -207,15 +155,8 @@
     </nav>
 
     <header class="hero-section">
-        <!-- TITLE WITH SMOOTH METALLIC SHINE -->
+        <!-- ALL OLD PLACEHOLDERS AND CTA BUTTONS REMOVED -->
         <h1 class="hero-title">Welcome to my website.</h1>
-        <p class="hero-subtitle">A fork that offers a wider selection of plugins from the community.</p>
-        <p class="hero-tagline">The feature-rich fork of Vencord.</p>
-        
-        <div class="cta-group">
-            <a href="#download" class="btn btn-white">↓ Download</a>
-            <a href="https://github.com" target="_blank" class="btn btn-outline">Source Code</a>
-        </div>
         
         <p class="os-availability">Available on Windows, macOS and Linux.</p>
     </header>
