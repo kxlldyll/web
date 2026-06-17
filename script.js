@@ -1,30 +1,26 @@
 /**
- * KYXS Portfolio - Production Application Engine
+ * KYXS Portfolio App Engine Core
  */
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. INTRO SPLASH GATEWAY OVERLAY SYSTEM ---
+    // --- Unlocks layout when users interact with intro wrapper overlay ---
     const gateway = document.getElementById('clickGateway');
     if (gateway) {
         gateway.addEventListener('click', () => {
-            // Unlocks viewport layout scrollbar controls
             gateway.classList.add('fade-out-complete');
             document.body.classList.add('content-revealed-active');
         });
     }
 
-    // --- 2. LTC CRYPTO COPIER FUNCTIONALITY ---
+    // --- Clipboard management handler engine targeting Litecoin data ---
     const ltcBtn = document.getElementById('ltcDonateBtn');
-    
-    // Replace this placeholder string with your physical Litecoin address
-    const ltcAddress = "YOUR_LITECOIN_ADDRESS_HERE"; 
+    const ltcAddress = "ltc1qq72968uay6n5kc0m3aswdjqsuaah0vejfn5yhl"; 
 
     if (ltcBtn) {
         ltcBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevents layout from bouncing to top of screen
+            e.preventDefault(); // Blocks layout browser scroll bouncy bugs
             
             navigator.clipboard.writeText(ltcAddress).then(() => {
-                // Preserves structural layout spacing while injecting confirmation feedback
                 const originalText = ltcBtn.innerHTML;
                 ltcBtn.style.color = "#ffffff";
                 ltcBtn.innerHTML = `
@@ -34,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     COPIED!
                 `;
                 
-                // Gracefully returns UI to inactive dark state after timeout
+                // Returns string state elements back to monochrome inactive tone layout values
                 setTimeout(() => {
                     ltcBtn.innerHTML = originalText;
                     ltcBtn.style.color = "";
                 }, 2000);
             }).catch(err => {
-                console.error('Crypto engine failure copying text address payload: ', err);
+                console.error('Core security context failed copying text element data payload: ', err);
             });
         });
     }
