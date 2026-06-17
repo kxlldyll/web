@@ -3,19 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme">
 
-    <div class="error-container">
-        <h1 id="errorCode">404</h1>
-        <h2>Oops! You are lost in space.</h2>
-        <p>The page you are looking for doesn't exist or has drifted away.</p>
-        <button id="panicButton">Don't Panic</button>
-    </div>
+    <nav class="navbar">
+        <div class="logo">Dev.AI</div>
+        <button id="themeToggle" class="toggle-btn">☀️ Light Mode</button>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+        <p class="subtitle">Building clean, efficient front-end web applications with modern tech stacks.</p>
+        <div class="cta-buttons">
+            <a href="#projects" class="btn primary">View Work</a>
+            <a href="#contact" class="btn secondary">Get In Touch</a>
+        </div>
+    </header>
+
+    <main id="projects" class="portfolio-container">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="frontend">Front-End</button>
+            <button class="filter-btn" data-filter="saas">Micro-SaaS</button>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card" data-category="frontend">
+                <div class="card-badge">Front-End</div>
+                <h3>E-Commerce Interface</h3>
+                <p>An interactive store dashboard built entirely with vanilla layout languages and optimized for fluid responsive rendering.</p>
+            </div>
+            
+            <div class="project-card" data-category="saas">
+                <div class="card-badge">Micro-SaaS</div>
+                <h3>Automation Tool</h3>
+                <p>A cloud-integrated analytics UI dashboard showcasing seamless data fetching and real-time interface element rendering.</p>
+            </div>
+
+            <div class="project-card" data-category="frontend">
+                <div class="card-badge">Front-End</div>
+                <h3>Interactive Sandbox</h3>
+                <p>A global infrastructure web server test page configured using automated Cloudflare Pages continuous deployment hooks.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer">
+        <p>© 2026 Dev.AI. Powered by Cloudflare & GitHub.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
