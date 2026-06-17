@@ -27,6 +27,64 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow: hidden; /* Prevents scrolling while screen is locked */
+        }
+
+        /* Click to Reveal Intro Screen overlay */
+        .intro-screen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0b0c; /* Deep matte gray background matching screenshot */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+        }
+
+        /* When active, this class fades out the overlay screen cleanly */
+        .intro-screen-overlay.fade-out-complete {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Matte Gray Layout Intro Title */
+        .intro-screen-title {
+            font-size: 4.8rem;
+            font-family: 'Georgia', Garamond, serif;
+            font-style: italic;
+            font-weight: 400;
+            color: #a4a7ac;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        /* Center Separator Dash Item */
+        .intro-screen-divider {
+            width: 30px;
+            height: 1px;
+            background-color: #2a2b2d;
+            margin-bottom: 25px;
+        }
+
+        /* Lower Tracking Subheader Prompt */
+        .intro-screen-prompt {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #4a4d52;
+            transition: color 0.2s ease;
+        }
+
+        .intro-screen-overlay:hover .intro-screen-prompt {
+            color: #8e9297; /* Soft glow effect on text hover */
         }
 
         /* Pure Vertical Layout Void Workspace */
@@ -40,6 +98,20 @@
             max-width: 900px;
             width: 100%;
             margin: 0 auto;
+            opacity: 0; /* Hidden initially behind overlay execution structures */
+            transform: scale(0.98);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Revealing content smooth transition animation toggle */
+        body.content-revealed-active .kyxs-core-layout {
+            opacity: 1;
+            transform: scale(1);
+            overflow: visible;
+        }
+
+        body.content-revealed-active {
+            overflow: visible; /* Re-enables document usage once reveal triggers */
         }
 
         /* Elegant Seriffed Profile Name (Cursive-style Gradient Serif) */
@@ -170,9 +242,15 @@
 </head>
 <body>
 
-    <!-- COMPLETELY BLANK CONTAINER BODY HEADER LAYER -->
+    <!-- CLICK TO REVEAL OVERLAY GATEWAY SCREEN -->
+    <div id="clickGateway" class="intro-screen-overlay">
+        <!-- MATCHES YOUR SCREENSHOT EXACTLY -->
+        <div class="intro-screen-title">Temmie</div>
+        <div class="intro-screen-divider"></div>
+        <div class="intro-screen-prompt">Click to reveal</div>
+    </div>
 
-    <!-- NUKED PREVIOUS CLASSES TO ABSOLUTELY SMASH NETWORK CACHE -->
+    <!-- MAIN PORTFOLIO BODY LAYER (Reveals smoothly on gateway interaction click execution) -->
     <main class="kyxs-core-layout">
         <h1 class="kyxs-main-title">KYXS</h1>
         <p class="profile-subtitle">DEVELOPER</p>
@@ -208,5 +286,19 @@
 
     <div class="est-timestamp">Est. 2026</div>
 
+    <script>
+        // DOM Gateway Declarations
+        const clickGateway = document.getElementById('clickGateway');
+        const documentBody = document.body;
+
+        // JavaScript Interaction Click Execution Engine
+        clickGateway.addEventListener('click', () => {
+            // Smoothly slide and fade the screen overlay into hiding
+            clickGateway.classList.add('fade-out-complete');
+            
+            // Activate structural classes to bring up core text layout elements
+            documentBody.classList.add('content-revealed-active');
+        });
+    </script>
 </body>
 </html>
