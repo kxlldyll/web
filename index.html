@@ -54,7 +54,7 @@
             pointer-events: none;
         }
 
-        /* Matte Gray Layout Intro Title */
+        /* Matte Gray Layout Intro Title (Updated to lowercase, cursive/serif italic style) */
         .intro-screen-title {
             font-size: 4.8rem;
             font-family: 'Georgia', Garamond, serif;
@@ -63,6 +63,7 @@
             color: #a4a7ac;
             margin-bottom: 25px;
             letter-spacing: -1px;
+            text-transform: lowercase; /* Forces lowercase rendering */
         }
 
         /* Center Separator Dash Item */
@@ -244,13 +245,13 @@
 
     <!-- CLICK TO REVEAL OVERLAY GATEWAY SCREEN -->
     <div id="clickGateway" class="intro-screen-overlay">
-        <!-- MATCHES YOUR SCREENSHOT EXACTLY -->
-        <div class="intro-screen-title">Temmie</div>
+        <!-- NAME CHANGED FROM TEMMIE TO LOWERCASE, CURSIVE STYLE 'kyxs' -->
+        <div class="intro-screen-title">kyxs</div>
         <div class="intro-screen-divider"></div>
         <div class="intro-screen-prompt">Click to reveal</div>
     </div>
 
-    <!-- MAIN PORTFOLIO BODY LAYER (Reveals smoothly on gateway interaction click execution) -->
+    <!-- MAIN PORTFOLIO BODY LAYER -->
     <main class="kyxs-core-layout">
         <h1 class="kyxs-main-title">KYXS</h1>
         <p class="profile-subtitle">DEVELOPER</p>
@@ -299,6 +300,3 @@
             // Activate structural classes to bring up core text layout elements
             documentBody.classList.add('content-revealed-active');
         });
-    </script>
-</body>
-</html>
