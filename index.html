@@ -28,83 +28,17 @@
             min-height: 100vh;
         }
 
-        /* Navbar Layout Config */
-        .navbar {
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center;
-            padding: 15px 40px;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .nav-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-link:hover {
-            color: var(--text-white);
-        }
-
-        /* Inline SVG Vector Sizing Config */
-        .nav-icon {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .btn-download {
-            background-color: var(--text-white);
-            color: var(--bg-black);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: opacity 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-download:hover {
-            opacity: 0.9;
-        }
-
-        /* Main Center Profile Grid Wrapper */
+        /* Main Center Workspace Layout */
         .portfolio-main-hero {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             text-align: left;
             flex-grow: 1;
-            padding: 140px 40px 60px;
+            padding: 60px 40px;
             max-width: 900px;
             width: 100%;
             margin: 0 auto;
-            gap: 60px;
         }
 
         .profile-text-side {
@@ -200,20 +134,15 @@
             color: var(--text-white);
         }
 
-        /* Avatar Container Formatting Layout */
-        .profile-avatar-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .large-profile-avatar {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #1c1c1f;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
+        /* Inline SVG Vector Sizing Config */
+        .nav-icon {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         /* Tiny Est Timestamp Label */
@@ -230,10 +159,7 @@
         /* Responsive Mobile Breakpoint Override */
         @media (max-width: 768px) {
             .portfolio-main-hero {
-                flex-direction: column-reverse;
-                padding-top: 140px;
                 text-align: center;
-                gap: 40px;
             }
             .tech-stack-row, .profile-directory-footer {
                 justify-content: center;
@@ -246,31 +172,10 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-right">
-            <a href="#contact" class="nav-link">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Contact
-            </a>
-            <a href="https://github.com" target="_blank" class="nav-link">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                GitHub
-            </a>
-            <a href="https://discord.com" target="_blank" class="nav-link">
-                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                Discord
-            </a>
-            <a href="#download" class="btn-download">
-                <svg class="nav-icon" style="stroke: #000000;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
-                Download
-            </a>
-        </div>
-    </nav>
+    <!-- TOP NAVIGATION BAR REMOVED COMPLETELY TO CLEAN THE LAYOUT -->
 
     <!-- MAIN PROFILE HERO BLOCK -->
     <header class="portfolio-main-hero">
-        
-        <!-- LEFT SIDE CONTENT PANEL -->
         <div class="profile-text-side">
             <h1 class="portfolio-main-title">KYXS</h1>
             <p class="profile-subtitle">DEVELOPER</p>
@@ -303,4 +208,9 @@
                 </a>
             </div>
         </div>
+    </header>
 
+    <div class="est-timestamp">Est. 2026</div>
+
+</body>
+</html>
