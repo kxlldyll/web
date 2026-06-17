@@ -31,7 +31,7 @@
         /* Navbar Layout Config */
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* ALIGNS LINKS PERFECTLY TO THE RIGHT */
             align-items: center;
             padding: 15px 40px;
             background-color: rgba(0, 0, 0, 0.8);
@@ -41,11 +41,6 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
         }
 
         .nav-right {
@@ -118,11 +113,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo">
-                <!-- BROKEN AVATAR IMG TAG REMOVED COMPLETELY -->
-            </div>
-        </div>
+        <!-- LEFT CONTAINER STRIPPED TO COMPLETELY KILL THE LINGERING ALIEN IMAGE ELEMENTS -->
         <div class="nav-right">
             <a href="https://discord.com" target="_blank" class="nav-link text-link">Discord</a>
             <a href="https://github.com" target="_blank" class="nav-link text-link">GitHub</a>
