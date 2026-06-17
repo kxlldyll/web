@@ -27,7 +27,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow: hidden; /* Prevents scrolling while screen is locked */
+            overflow: hidden; /* Lock viewport completely until interaction executes */
         }
 
         /* Click to Reveal Intro Screen overlay */
@@ -37,7 +37,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #0b0b0c; /* Deep matte gray background matching screenshot */
+            background-color: #0b0b0c; /* Matte gray intro shield */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -47,14 +47,14 @@
             transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
         }
 
-        /* When active, this class fades out the overlay screen cleanly */
+        /* Forces a clean, hardware-accelerated fade out */
         .intro-screen-overlay.fade-out-complete {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
         }
 
-        /* Matte Gray Layout Intro Title (Updated to lowercase, cursive/serif italic style) */
+        /* Lowercase Cursive Title */
         .intro-screen-title {
             font-size: 4.8rem;
             font-family: 'Georgia', Garamond, serif;
@@ -63,10 +63,10 @@
             color: #a4a7ac;
             margin-bottom: 25px;
             letter-spacing: -1px;
-            text-transform: lowercase; /* Forces lowercase rendering */
+            text-transform: lowercase;
         }
 
-        /* Center Separator Dash Item */
+        /* Thin horizontal layout separator line */
         .intro-screen-divider {
             width: 30px;
             height: 1px;
@@ -74,7 +74,7 @@
             margin-bottom: 25px;
         }
 
-        /* Lower Tracking Subheader Prompt */
+        /* Tracking Prompt Text */
         .intro-screen-prompt {
             font-size: 0.75rem;
             font-weight: 500;
@@ -85,10 +85,10 @@
         }
 
         .intro-screen-overlay:hover .intro-screen-prompt {
-            color: #8e9297; /* Soft glow effect on text hover */
+            color: #8e9297;
         }
 
-        /* Pure Vertical Layout Void Workspace */
+        /* Core Portfolio Content Panel */
         .kyxs-core-layout {
             display: flex;
             flex-direction: column;
@@ -99,23 +99,24 @@
             max-width: 900px;
             width: 100%;
             margin: 0 auto;
-            opacity: 0; /* Hidden initially behind overlay execution structures */
+            
+            /* Initial visibility parameters before interaction */
+            opacity: 0;
             transform: scale(0.98);
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Revealing content smooth transition animation toggle */
+        /* Global transition active execution hook states */
+        body.content-revealed-active {
+            overflow: visible; /* Unlock user browsing inputs */
+        }
+
         body.content-revealed-active .kyxs-core-layout {
             opacity: 1;
             transform: scale(1);
-            overflow: visible;
         }
 
-        body.content-revealed-active {
-            overflow: visible; /* Re-enables document usage once reveal triggers */
-        }
-
-        /* Elegant Seriffed Profile Name (Cursive-style Gradient Serif) */
+        /* Premium Silver Finished Heading */
         .kyxs-main-title {
             font-size: 4.8rem;
             font-family: 'Georgia', Garamond, serif;
@@ -128,7 +129,6 @@
             display: inline-block;
         }
 
-        /* Uppercase Tracking Subtitle Subheader */
         .profile-subtitle {
             font-size: 0.8rem;
             font-weight: 600;
@@ -138,7 +138,6 @@
             margin-bottom: 25px;
         }
 
-        /* Content Break Separator Line */
         .profile-divider {
             border: none;
             height: 1px;
@@ -147,7 +146,6 @@
             margin-bottom: 25px;
         }
 
-        /* Tech Badges Inline Stack */
         .tech-stack-row {
             font-family: 'Georgia', Garamond, serif;
             font-style: italic;
@@ -158,7 +156,6 @@
             margin-bottom: 30px;
         }
 
-        /* Services Descriptive Overview Lines */
         .services-list {
             display: flex;
             flex-direction: column;
@@ -181,7 +178,6 @@
             color: #4f545c;
         }
 
-        /* Profile Lower Directory Links Row */
         .profile-directory-footer {
             display: flex;
             gap: 25px;
@@ -204,7 +200,6 @@
             color: var(--text-white);
         }
 
-        /* Inline SVG Vector Sizing Config */
         .nav-icon {
             width: 16px;
             height: 16px;
@@ -215,7 +210,6 @@
             stroke-linejoin: round;
         }
 
-        /* Tiny Est Timestamp Label */
         .est-timestamp {
             position: fixed;
             bottom: 25px;
@@ -226,7 +220,6 @@
             text-transform: uppercase;
         }
 
-        /* Responsive Mobile Breakpoint Override */
         @media (max-width: 768px) {
             .kyxs-core-layout {
                 align-items: center;
@@ -243,15 +236,14 @@
 </head>
 <body>
 
-    <!-- CLICK TO REVEAL OVERLAY GATEWAY SCREEN -->
+    <!-- OVERLAY SHIELD PANEL -->
     <div id="clickGateway" class="intro-screen-overlay">
-        <!-- NAME CHANGED FROM TEMMIE TO LOWERCASE, CURSIVE STYLE 'kyxs' -->
         <div class="intro-screen-title">kyxs</div>
         <div class="intro-screen-divider"></div>
         <div class="intro-screen-prompt">Click to reveal</div>
     </div>
 
-    <!-- MAIN PORTFOLIO BODY LAYER -->
+    <!-- MAIN INTERFACE CONTAINER -->
     <main class="kyxs-core-layout">
         <h1 class="kyxs-main-title">KYXS</h1>
         <p class="profile-subtitle">DEVELOPER</p>
@@ -288,15 +280,17 @@
     <div class="est-timestamp">Est. 2026</div>
 
     <script>
-        // DOM Gateway Declarations
-        const clickGateway = document.getElementById('clickGateway');
-        const documentBody = document.body;
-
-        // JavaScript Interaction Click Execution Engine
-        clickGateway.addEventListener('click', () => {
-            // Smoothly slide and fade the screen overlay into hiding
-            clickGateway.classList.add('fade-out-complete');
+        // Bulletproof inline interaction engine
+        document.addEventListener('DOMContentLoaded', () => {
+            const gateway = document.getElementById('clickGateway');
             
-            // Activate structural classes to bring up core text layout elements
-            documentBody.classList.add('content-revealed-active');
+            gateway.addEventListener('click', () => {
+                // Wipe the shield overlay
+                gateway.classList.add('fade-out-complete');
+                // Smoothly snap open the inner dashboard container elements
+                document.body.classList.add('content-revealed-active');
+            });
         });
+    </script>
+</body>
+</html>
