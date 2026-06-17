@@ -1,176 +1,170 @@
-/* Color Scheme Variables */
+/* Core Minimalist Variables */
 :root {
-    --bg-primary: #ffffff;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --accent: #3b82f6;
-    --card-bg: #f8fafc;
-    --card-border: #e2e8f0;
+    --bg-black: #000000;
+    --text-white: #ffffff;
+    --text-muted: #8e9297;
+    --border-color: #202225;
 }
 
-body.dark-theme {
-    --bg-primary: #0f172a;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #60a5fa;
-    --card-bg: #1e293b;
-    --card-border: #334155;
-}
-
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Navigation Layout */
+/* Slick Navbar Layout */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    border-bottom: 1px solid var(--card-border);
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent);
-}
-
-.toggle-btn {
-    background: none;
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* Hero UI Banner */
-.hero-section {
-    text-align: center;
-    padding: 100px 10%;
-}
-
-.hero-section h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.highlight {
-    color: var(--accent);
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 10px;
-}
-
-.btn.primary {
-    background-color: var(--accent);
-    color: #ffffff;
-}
-
-.btn.secondary {
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-}
-
-/* Project Showroom Elements */
-.portfolio-container {
-    padding: 60px 10%;
-}
-
-.section-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.filter-buttons {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
+    align-items: center;
+    gap: 10px;
 }
 
-.filter-btn {
-    background: none;
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-    padding: 8px 20px;
-    border-radius: 6px;
-    cursor: pointer;
+.menu-icon {
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-.filter-btn.active {
-    background-color: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-
-/* Dynamic Grid Engine */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.nav-center {
+    display: flex;
     gap: 30px;
 }
 
-.project-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 30px;
-    border-radius: 12px;
-    position: relative;
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.project-card.hide {
-    display: none;
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-.card-badge {
-    display: inline-block;
-    background-color: var(--card-border);
-    color: var(--accent);
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 4px 10px;
+.nav-link:hover {
+    color: var(--text-white);
+}
+
+/* Nav Download Pill Button */
+.btn-download {
+    background-color: var(--text-white);
+    color: var(--bg-black);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
     border-radius: 4px;
-    margin-bottom: 15px;
+    transition: opacity 0.2s ease;
 }
 
-.project-card h3 {
-    margin-bottom: 10px;
+.btn-download:hover {
+    opacity: 0.9;
 }
 
-.project-card p {
-    color: var(--text-secondary);
-}
-
-.footer {
+/* Hero Text Layout */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 40px;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--card-border);
+    flex-grow: 1;
+    padding: 140px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    background: linear-gradient(to bottom, #ffffff 60%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.hero-tagline {
+    font-size: 0.95rem;
+    color: #4f545c;
+    margin-bottom: 40px;
+}
+
+/* Action Buttons Row */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-white {
+    background-color: var(--text-white);
+    color: var(--bg-black);
+}
+
+.btn-white:hover {
+    background-color: #e3e5e8;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid #36393f;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #72767d;
+}
+
+.os-availability {
+    font-size: 0.8rem;
+    color: #4f545c;
 }
