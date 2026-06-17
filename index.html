@@ -3,58 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Sincord - An Enhanced Version</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
+<body>
 
     <nav class="navbar">
-        <div class="logo">Dev.AI</div>
-        <button id="themeToggle" class="toggle-btn">☀️ Light Mode</button>
+        <div class="nav-left">
+            <div class="logo">
+                <span class="menu-icon">☰</span> Sincord
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="#plugins" class="nav-link">Plugins</a>
+            <a href="#cloud" class="nav-link">Cloud</a>
+            <a href="#download" class="nav-link">Download</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://discord.com" target="_blank" class="nav-link text-link">Discord</a>
+            <a href="https://github.com" target="_blank" class="nav-link text-link">GitHub</a>
+            <a href="#donate" class="nav-link text-link">Donate</a>
+            <a href="#download" class="btn-download">Download</a>
+        </div>
     </nav>
 
     <header class="hero-section">
-        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-        <p class="subtitle">Building clean, efficient front-end web applications with modern tech stacks.</p>
-        <div class="cta-buttons">
-            <a href="#projects" class="btn primary">View Work</a>
-            <a href="#contact" class="btn secondary">Get In Touch</a>
-        </div>
-    </header>
-
-    <main id="projects" class="portfolio-container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h1 class="hero-title">An enhanced<br>version of Vencord</h1>
+        <p class="hero-subtitle">A fork that offers a wider selection of plugins from the community.</p>
+        <p class="hero-tagline">The feature-rich fork of Vencord.</p>
         
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="frontend">Front-End</button>
-            <button class="filter-btn" data-filter="saas">Micro-SaaS</button>
+        <div class="cta-group">
+            <a href="#download" class="btn btn-white">↓ Download</a>
+            <a href="https://github.com" target="_blank" class="btn btn-outline">Source Code</a>
         </div>
-
-        <div class="project-grid">
-            <div class="project-card" data-category="frontend">
-                <div class="card-badge">Front-End</div>
-                <h3>E-Commerce Interface</h3>
-                <p>An interactive store dashboard built entirely with vanilla layout languages and optimized for fluid responsive rendering.</p>
-            </div>
-            
-            <div class="project-card" data-category="saas">
-                <div class="card-badge">Micro-SaaS</div>
-                <h3>Automation Tool</h3>
-                <p>A cloud-integrated analytics UI dashboard showcasing seamless data fetching and real-time interface element rendering.</p>
-            </div>
-
-            <div class="project-card" data-category="frontend">
-                <div class="card-badge">Front-End</div>
-                <h3>Interactive Sandbox</h3>
-                <p>A global infrastructure web server test page configured using automated Cloudflare Pages continuous deployment hooks.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer id="contact" class="footer">
-        <p>© 2026 Dev.AI. Powered by Cloudflare & GitHub.</p>
-    </footer>
+        
+        <p class="os-availability">Available on Windows, macOS and Linux.</p>
+    </header>
 
     <script src="script.js"></script>
 </body>
