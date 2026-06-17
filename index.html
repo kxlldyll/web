@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my portfolio :3</title>
+    <title>Welcome to My Website</title>
     <style>
         /* Core Minimalist Layout Styles */
         :root {
@@ -31,7 +31,7 @@
         /* Navbar Layout Config */
         .navbar {
             display: flex;
-            justify-content: flex-end; /* ALIGNS LINKS PERFECTLY TO THE RIGHT */
+            justify-content: flex-end; 
             align-items: center;
             padding: 15px 40px;
             background-color: rgba(0, 0, 0, 0.8);
@@ -46,7 +46,7 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 24px; /* Slightly increased gap to account for icons */
         }
 
         .nav-link {
@@ -55,10 +55,20 @@
             font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Spaces out the icon and the text label */
         }
 
         .nav-link:hover {
             color: var(--text-white);
+        }
+
+        /* Sizing for the inline icons */
+        .nav-link i, .btn-download i {
+            width: 16px;
+            height: 16px;
+            stroke-width: 2px;
         }
 
         .btn-download {
@@ -70,6 +80,9 @@
             padding: 8px 16px;
             border-radius: 4px;
             transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-download:hover {
@@ -113,21 +126,33 @@
 <body>
 
     <nav class="navbar">
-        <!-- LEFT CONTAINER STRIPPED TO COMPLETELY KILL THE LINGERING ALIEN IMAGE ELEMENTS -->
         <div class="nav-right">
-            <a href="https://discord.com" target="_blank" class="nav-link text-link">Discord</a>
-            <a href="https://github.com" target="_blank" class="nav-link text-link">GitHub</a>
-            <a href="#donate" class="nav-link text-link">Donate</a>
-            <a href="#download" class="btn-download">Download</a>
+            <!-- WIRED ICONS DIRECTLY NEXT TO YOUR ORIGINAL TEXT LABELS -->
+            <a href="https://discord.com" target="_blank" class="nav-link text-link">
+                <i data-lucide="message-square"></i> Discord
+            </a>
+            <a href="https://github.com" target="_blank" class="nav-link text-link">
+                <i data-lucide="github"></i> GitHub
+            </a>
+            <a href="#donate" class="nav-link text-link">
+                <i data-lucide="heart"></i> Donate
+            </a>
+            <a href="#download" class="btn-download">
+                <i data-lucide="download"></i> Download
+            </a>
         </div>
     </nav>
 
     <header class="hero-section">
-        <h1 class="hero-title">Welcome to my website.</h1>
-        <p class="os-availability">Available on Windows, macOS and Linux.</p>
+        <h1 class="hero-title">hi.</h1>
     </header>
 
+    <!-- LOAD THE INSTANT ICON LIBRARY ENGINE -->
+    <script src="https://unpkg.com"></script>
     <script>
+        /* Fire up the icon engine */
+        lucide.createIcons();
+
         /* Interactive Scrolling FX */
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
