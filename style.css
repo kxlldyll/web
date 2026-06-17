@@ -1,53 +1,176 @@
+/* Color Scheme Variables */
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent: #3b82f6;
+    --card-bg: #f8fafc;
+    --card-border: #e2e8f0;
+}
+
+body.dark-theme {
+    --bg-primary: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #60a5fa;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+}
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-    background-color: #0b0f19;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.toggle-btn {
+    background: none;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Hero UI Banner */
+.hero-section {
+    text-align: center;
+    padding: 100px 10%;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.btn.primary {
+    background-color: var(--accent);
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn.secondary {
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+}
+
+/* Project Showroom Elements */
+.portfolio-container {
+    padding: 60px 10%;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
-.error-container {
-    padding: 20px;
+.filter-btn {
+    background: none;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-h1 {
-    font-size: 8rem;
-    color: #ff4757;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
+.filter-btn.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
 }
 
-h2 {
-    font-size: 2rem;
+/* Dynamic Grid Engine */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.project-card.hide {
+    display: none;
+}
+
+.card-badge {
+    display: inline-block;
+    background-color: var(--card-border);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
     margin-bottom: 15px;
 }
 
-p {
-    color: #a4b0be;
-    margin-bottom: 30px;
+.project-card h3 {
+    margin-bottom: 10px;
 }
 
-button {
-    background-color: #1e90ff;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
+.project-card p {
+    color: var(--text-secondary);
 }
 
-button:hover {
-    background-color: #3742fa;
+.footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--card-border);
 }
