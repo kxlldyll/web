@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
+    <title>Portfolio Workspace</title>
     <style>
         /* Core Minimalist Layout Styles */
         :root {
             --bg-black: #000000;
             --text-white: #ffffff;
             --text-muted: #8e9297;
-            --border-color: #202225;
+            --border-color: #1c1c1f;
         }
 
         * {
@@ -117,7 +117,7 @@
             font-family: 'Georgia', Garamond, serif;
             font-style: italic;
             font-weight: 400;
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             background: linear-gradient(to right, #ffffff 40%, #777777 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -126,7 +126,7 @@
 
         /* Uppercase Tracking Subtitle Subheader */
         .profile-subtitle {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -138,66 +138,9 @@
         .profile-divider {
             border: none;
             height: 1px;
-            background-color: #1c1c1f;
+            background-color: var(--border-color);
             width: 100%;
             margin-bottom: 25px;
-        }
-
-        /* Tech Badges Inline Stack */
-        .tech-stack-row {
-            font-family: 'Georgia', Garamond, serif;
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 1rem;
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* Services Descriptive Overview Lines */
-        .services-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 35px;
-        }
-
-        .service-item {
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .service-item::before {
-            content: "—";
-            color: #4f545c;
-        }
-
-        /* Profile Lower Directory Links Row */
-        .profile-directory-footer {
-            display: flex;
-            gap: 25px;
-        }
-
-        .directory-link {
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .directory-link:hover {
-            color: var(--text-white);
         }
 
         /* Avatar Container Config */
@@ -212,8 +155,7 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #1c1c1f;
-            box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.02);
+            border: 2px solid var(--border-color);
         }
 
         /* Tiny Est Timestamp Label */
@@ -232,13 +174,7 @@
             .portfolio-main-hero {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding-top: 100px;
-            }
-            .tech-stack-row, .profile-directory-footer {
-                justify-content: center;
-            }
-            .service-item {
-                justify-content: center;
+                padding-top: 120px;
             }
         }
     </style>
@@ -272,35 +208,30 @@
         <!-- LEFT SIDE CONTENT PANEL -->
         <div class="profile-text-side">
             <h1 class="portfolio-main-title">Temmie</h1>
-            <p class="profile-subtitle">Developer & Reseller</p>
-            
+            <p class="profile-subtitle">Software Engineer & Digital Asset Specialist</p>
             <div class="profile-divider"></div>
-            
-            <div class="tech-stack-row">
-                <span>Lua</span>
-                <span>TypeScript</span>
-                <span>JavaScript</span>
-                <span>C++</span>
-            </div>
-            
-            <div class="services-list">
-                <div class="service-item">Software Development</div>
-                <div class="service-item">Reselling & Cheating</div>
-            </div>
-            
-            <div class="profile-directory-footer">
-                <a href="#contact" class="directory-link">
-                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    Contact
-                </a>
-                <a href="https://github.com" target="_blank" class="directory-link">
-                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    GitHub
-                </a>
-                <a href="https://discord.com" target="_blank" class="directory-link">
-                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    Discord
-                </a>
-            </div>
         </div>
 
+        <!-- RIGHT SIDE AVATAR IMG PANEL -->
+        <div class="profile-avatar-side">
+            <!-- Ensure your image file is named template-avatar.png in your repo -->
+            <img src="template-avatar.png" alt="Profile Avatar" class="large-profile-avatar">
+        </div>
+
+    </header>
+
+    <div class="est-timestamp">Est. 2026</div>
+
+    <script>
+        /* Interactive Scrolling FX */
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 20) {
+                navbar.style.borderBottom = '1px solid var(--border-color)';
+            } else {
+                navbar.style.borderBottom = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
